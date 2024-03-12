@@ -39,7 +39,7 @@ export const TTNorms = localFont({
     },
 
     {
-      path: "./tt-norms/extra-bold.otf",
+      path: "./tt-norms/bold.otf",
       weight: "700",
       style: "normal",
     },
