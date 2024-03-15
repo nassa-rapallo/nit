@@ -13,7 +13,7 @@ export const Tagline = () => {
     >
       <TypingText
         text="Lə giovanə si devono sfogare"
-        className="text-5xl md:text-7xl lg:w-1/2 font-bold text-[#E5F5FF] text-center drop-shadow-md"
+        className="text-5xl md:text-7xl font-bold text-[#E5F5FF] text-center drop-shadow-md"
       />
 
       <h2 className="mt-2 text-lg text-center leading-none">
