@@ -1,53 +1,63 @@
+import { MOCK, THEME } from ".";
+
 export type Project = {
   title: string;
+  date?: string;
   description: string;
   image: string;
-  link: string;
+  share?: {
+    external?: string;
+    instagram?: string;
+    album?: string;
+  };
   color: string;
 };
 
-const mock_image =
-  "https://images.unsplash.com/photo-1520880867055-1e30d1cb001c?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
-
 export const PROJECTS: Array<Project> = [
   {
-    title: "Matthias Leidinger",
-    description:
-      "Originally hailing from Austria, Berlin-based photographer Matthias Leindinger is a young creative brimming with talent and ideas.",
-    image: mock_image,
-    link: "https://www.ignant.com/2023/03/25/ad2186-matthias-leidingers-photographic-exploration-of-awe-and-wonder/",
-    color: "#BBACAF",
-  },
-  {
-    title: "Clément Chapillon",
+    title: "World Cafe",
     description:
       "This is a story on the border between reality and imaginary, about the contradictory feelings that the insularity of a rocky, arid, and wild territory provokes”—so French photographer Clément Chapillon describes his latest highly captivating project Les rochers fauves (French for ‘The tawny rocks’).",
-    image: mock_image,
-    link: "https://www.ignant.com/2022/09/30/clement-chapillon-questions-geographical-and-mental-isolation-with-les-rochers-fauves/",
-    color: "#977F6D",
+    image: "/project/world-cafe.png",
+    color: THEME.COLORS.NASSA[100],
   },
+
   {
-    title: "Zissou",
+    title: "Playground",
+    description:
+      "Originally hailing from Austria, Berlin-based photographer Matthias Leindinger is a young creative brimming with talent and ideas.",
+    image: "/project/playground.png",
+    color: THEME.COLORS.NASSA[200],
+  },
+
+  {
+    title: "Sextival",
     description:
       "Though he views photography as a medium for storytelling, Zissou’s images don’t insist on a narrative. Both crisp and ethereal, they’re encoded with an ambiguity—a certain tension—that lets the viewer find their own story within them.",
-    image: mock_image,
-    link: "https://www.ignant.com/2023/10/28/capturing-balis-many-faces-zissou-documents-the-sacred-and-the-mundane-of-a-fragile-island/",
-    color: "#C2491D",
+    image: "/project/sextival.png",
+    color: THEME.COLORS.NASSA[300],
+    share: {
+      external: "https://sextival.it",
+      instagram: "https://www.instagram.com/_sextival/",
+    },
   },
+
   {
-    title: "Mathias Svold and Ulrik Hasemann",
+    title: "Prebuggiun",
     description:
       "The coastlines of Denmark are documented in tonal colors in a pensive new series by Danish photographers Ulrik Hasemann and Mathias Svold; an ongoing project investigating how humans interact with and disrupt the Danish coast.",
-    image: mock_image,
-    link: "https://www.ignant.com/2019/03/13/a-photographic-series-depicting-the-uncertain-future-of-denmarks-treasured-coastlines/",
-    color: "#B62429",
+    image: "/project/prebuggiun.png",
+    color: THEME.COLORS.NASSA[400],
+    share: {
+      instagram: "https://www.instagram.com/prebuggiun/",
+    },
   },
+
   {
-    title: "Mark Rammers",
+    title: "Nassaland",
     description:
       "Dutch photographer Mark Rammers has shared with IGNANT the first chapter of his latest photographic project, ‘all over again’—captured while in residency at Hektor, an old farm in Los Valles, Lanzarote. Titled ‘Beginnings’, the mesmerizing collection of images is a visual and meditative journey into the origins of regrets and the uncertainty of stepping into new unknowns.",
-    image: mock_image,
-    link: "https://www.ignant.com/2023/04/12/mark-rammers-all-over-again-is-a-study-of-regret-and-the-willingness-to-move-forward/",
-    color: "#88A28D",
+    image: MOCK.IMAGE,
+    color: THEME.COLORS.NASSA[500],
   },
 ];

@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="it">
       <body className={TTNorms.className}>
-        <main className="min-h-screen flex flex-col gap-4 relative">
+        <main className="min-h-screen flex flex-col gap-4 relative bg-nassa-0 text-nassa-900">
           <Header />
           {children}
         </main>
