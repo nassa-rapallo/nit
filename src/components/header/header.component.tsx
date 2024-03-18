@@ -9,6 +9,7 @@ import { LOGO_DIMENSIONS, ROUTES } from "@/data";
 import { useIsIntersected } from "@/hooks";
 import { cn } from "@/utils";
 import { headerVariants, logoVariants } from "./variants";
+import { useRouter } from "next/navigation";
 
 export const Header = () => {
   const [headerVariant, setHeaderVariant] = useState<
@@ -31,6 +32,8 @@ export const Header = () => {
     [isIntersected],
   );
 
+  const router = useRouter();
+
   return (
     <motion.div
       variants={headerVariants}
@@ -50,7 +53,8 @@ export const Header = () => {
           variants={logoVariants}
           initial={isIntersected ? "animate" : "initial"}
           animate={isIntersected ? "animate" : "initial"}
-          className="relative"
+          className="relative cursor-pointer"
+          onClick={() => router.push("/")}
         >
           <Image
             src={"/logo.png"}
