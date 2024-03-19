@@ -1,10 +1,12 @@
 "use client";
 
+import { useRef } from "react";
 import Image from "next/image";
+import Markdown from "react-markdown";
 import { useTransform, motion, useScroll, MotionValue } from "framer-motion";
-import { useEffect, useRef } from "react";
 
 import { Project } from "@/data/projects.data";
+import { Info } from "./info.component";
 
 type Props = {
   i: number;
@@ -22,14 +24,6 @@ export const Card = ({ i, data, progress, range, targetScale }: Props) => {
     target: container,
     offset: ["start end", "start start"],
   });
-
-  useEffect(() => {
-    console.log(
-      "d",
-      data.title,
-      client && client.current && client.current.clientHeight,
-    );
-  }, [client, data]);
 
   const imageScale = useTransform(scrollYProgress, [0, 1], [2, 1]);
   const scale = useTransform(progress, range, [1, targetScale]);
@@ -55,8 +49,12 @@ export const Card = ({ i, data, progress, range, targetScale }: Props) => {
           {data.title}
         </h2>
         <div className="flex flex-col lg:flex-row h-full mt-4 lg:mt-12 gap-4 lg:gap-12">
-          <div className="w-full lg:w-2/5 relative lg:top-[10%]">
-            <p>{data.description}</p>
+          <div className="w-full lg:w-2/5 relative lg:top-[10%] flex flex-col gap-2 text-sm lg:text-base">
+            {(data.dates || data.share) && (
+              <Info dates={data.dates} share={data.share} />
+            )}
+
+            <Markdown>{data.description}</Markdown>
           </div>
 
           <div className="relative w-full lg:w-3/5 flex-1 flex items-center h-[200px] lg:h-full rounded-xl overflow-hidden">

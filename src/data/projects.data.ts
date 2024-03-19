@@ -1,39 +1,52 @@
 import { MOCK, THEME } from ".";
 
+export type ProjectShare = {
+  external: string;
+  instagram: string;
+  album: string;
+};
+
 export type Project = {
   title: string;
-  date?: string;
+  dates?: Array<string>;
   description: string;
   image: string;
-  share?: {
-    external?: string;
-    instagram?: string;
-    album?: string;
-  };
+  share?: Partial<ProjectShare>;
   color: string;
 };
 
+// TODO: complete Nassaland entry
+
 export const PROJECTS: Array<Project> = [
   {
-    title: "World Cafe",
-    description:
-      "This is a story on the border between reality and imaginary, about the contradictory feelings that the insularity of a rocky, arid, and wild territory provokes”—so French photographer Clément Chapillon describes his latest highly captivating project Les rochers fauves (French for ‘The tawny rocks’).",
+    title: "World Cafè",
+    dates: ["4 Settembre 2021"],
+    description: `Come per tutte le Nasse, il World Cafè è stato il nostro **evento fondativo**. Un incontro tra persone, idee e progetti.  Un’occasione per parlare della nostra città, dei suoi problemi, dei suoi pregi e di ciò che vorremmo fare per migliorarla (E anche per ballare, mangiare e bere, ovviamente!)`,
     image: "/project/world-cafe.png",
     color: THEME.COLORS.NASSA[100],
   },
 
   {
     title: "Playground",
-    description:
-      "Originally hailing from Austria, Berlin-based photographer Matthias Leindinger is a young creative brimming with talent and ideas.",
+
+    dates: ["11 Novembre 2021"],
+    description: `
+Il playground è la più grande opera di riqualificazione urbana a cui Nassa Rapallo ha partecipato, eseguita all'interno del progetto **CA.R.U.GI**.
+
+Il lavoro inizia dalla primavera, con una co-progettazione con alcunə ragazzə del Centro Giovani. Durante i mesi estivi il campo viene prima ripulito, poi tracciato con il disegno ideato e infine colorato.
+`,
     image: "/project/playground.png",
     color: THEME.COLORS.NASSA[200],
   },
 
   {
     title: "Sextival",
-    description:
-      "Though he views photography as a medium for storytelling, Zissou’s images don’t insist on a narrative. Both crisp and ethereal, they’re encoded with an ambiguity—a certain tension—that lets the viewer find their own story within them.",
+    dates: ["25 & 26 Giugno 2022", "17 & 18 Giugno 2023"],
+    description: `
+Dal nostro **World Cafè** una delle necessità che più chiaramente esce è quella della salute sessuale. Nei mesi successivi, in modo organico e (forse) un po' pazzo nasce il Sextival. Un appuntamento, anzi una giornata, anzi due giorni di interventi, workshop e panel sul tema della salute sessuale.
+
+Il **Sextival** è un successo sia per il suo contenuto didattico sia per quello aggregativo; si è ripetuto nella seconda edizione del 2023 e si ripeterà nella sua terza edizione. 
+`,
     image: "/project/sextival.png",
     color: THEME.COLORS.NASSA[300],
     share: {
@@ -44,8 +57,12 @@ export const PROJECTS: Array<Project> = [
 
   {
     title: "Prebuggiun",
-    description:
-      "The coastlines of Denmark are documented in tonal colors in a pensive new series by Danish photographers Ulrik Hasemann and Mathias Svold; an ongoing project investigating how humans interact with and disrupt the Danish coast.",
+    dates: ["17 settembre 2022"],
+    description: `
+All'inizio dell'estate del 2022, con il Sextival alle spalle, organizziamo il **Prebuggiun**, *un festival spontaneo sulla crisi climatica*.
+
+È il primo grande evento che organizziamo a più mani - e sono tante: il Prebuggiun è organizzato insieme alle altre due **Nasse (Chiavari e Sestri)**, **Fridays For Future Genova** e **Extinction Rebellion Genova**.
+`,
     image: "/project/prebuggiun.png",
     color: THEME.COLORS.NASSA[400],
     share: {
