@@ -9,7 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@mdx-js/loader": "^3.0.1",
+    "@mdx-js/react": "^3.0.1",
+    "@next/mdx": "^14.1.4",
     "@studio-freight/lenis": "^1.0.39",
+    "@types/mdx": "^2.0.12",
     "clsx": "^2.1.0",
     "framer-motion": "^11.0.2",
     "lucide-react": "^0.359.0",
