@@ -1,6 +1,6 @@
 import { Variants } from "framer-motion";
 
-export const headerVariants: Variants = {
+export const headerVariants = (isHome: boolean): Variants => ({
   initial: {
     opacity: 0,
     top: -80,
@@ -9,7 +9,7 @@ export const headerVariants: Variants = {
     opacity: 1,
     top: 40,
     transition: {
-      delay: 0.5,
+      delay: isHome ? 0.5 : 0,
       duration: 1,
       type: "spring",
     },
@@ -22,7 +22,7 @@ export const headerVariants: Variants = {
       ease: "easeInOut",
     },
   },
-};
+});
 
 export const logoVariants: Variants = {
   initial: { scale: 1 },

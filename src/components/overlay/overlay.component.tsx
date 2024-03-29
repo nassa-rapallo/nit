@@ -36,7 +36,7 @@ export const Overlay = ({
       initial={"initial"}
       animate={open ? "animate" : "initial"}
       className={cn(
-        "fixed inset-0 bg-nassa-900 z-50 flex flex-col gap-4 p-4 text-white",
+        "fixed inset-0 bg-nassa-600 z-50 flex flex-col gap-4 p-4 text-white",
         className,
       )}
     >
